@@ -1,0 +1,27 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/mydb
+    username: postgres
+    password: masil1234
+    pool:
+      initial-size: 5
+      max-size: 20
+      max-idle-time: 30m
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000ms
+      lettuce:
+        pool:
+          max-active: 10
+          max-idle: 5
+          min-idle: 1
+
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8080
